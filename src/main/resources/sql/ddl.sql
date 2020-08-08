@@ -1,7 +1,7 @@
-drop table if exists users;
-drop table if exists posts;
-drop table if exists images;
 drop table if exists featured_posts;
+drop table if exists images;
+drop table if exists posts;
+drop table if exists users;
 drop table if exists categories;
 
 create table users
@@ -28,6 +28,7 @@ create table posts
     category_id int  not null,
     header      text not null,
     description text not null,
+    price       real not null,
     published   bool default true,
     foreign key (user_id) references users (id),
     foreign key (category_id) references categories (id)
