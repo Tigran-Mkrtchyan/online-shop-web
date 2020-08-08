@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet {
         var phoneNumber = req.getParameter("phoneNumber");
         var password = req.getParameter("password");
 
-        var user = UserService.login(phoneNumber, password);
+        var user = UserService.loginUser(phoneNumber, password);
 
         if(user == null) {
             resp.sendRedirect("/login?error");
